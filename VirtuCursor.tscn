@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cnjmj0uvbi3t6"]
+
+[ext_resource type="Script" uid="uid://62hqn8f6is0h" path="res://virtu_cursor.gd" id="1_npxa1"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_npxa1"]
+
+[node name="VirtuCursor" type="Control" unique_id=2010676742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_npxa1")
+
+[node name="Cursor" type="TextureRect" parent="." unique_id=846405657]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("PlaceholderTexture2D_npxa1")

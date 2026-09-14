@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cmeejggf23eyo" path="res://Assets/Images/Cursor.png" id="2_x56ef"]
 
 [node name="VirtuCursor" type="Control" unique_id=2010676742]
+z_index = 999
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

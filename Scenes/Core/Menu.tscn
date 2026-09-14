@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://comexni2jm42b" path="res://Scripts/MainSceneScripts/Menu.gd" id="1_s6c14"]
 [ext_resource type="PackedScene" uid="uid://b7ohh4qht3u1u" path="res://Assets/Models/RCL.blend" id="2_ekpe3"]
+[ext_resource type="Theme" uid="uid://d1b5c613u86co" path="res://Assets/UIThemes/Default.tres" id="2_o04fg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ekpe3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,6 +26,79 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_o04fg")
+
+[node name="Panel" type="Panel" parent="MainMenu" unique_id=767447472]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.5
+anchor_right = 0.25
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -65.0
+offset_right = 125.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/Panel" unique_id=1967948330]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Panel/MarginContainer" unique_id=422710983]
+layout_mode = 2
+
+[node name="HostPort" type="LineEdit" parent="MainMenu/Panel/MarginContainer/VBoxContainer" unique_id=1702197944]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Host Port (5000)"
+alignment = 1
+
+[node name="Joining" type="HBoxContainer" parent="MainMenu/Panel/MarginContainer/VBoxContainer" unique_id=1302688334]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="JoinAddress" type="LineEdit" parent="MainMenu/Panel/MarginContainer/VBoxContainer/Joining" unique_id=307505759]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Address"
+alignment = 1
+
+[node name="JoinPort" type="LineEdit" parent="MainMenu/Panel/MarginContainer/VBoxContainer/Joining" unique_id=160758205]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Port"
+alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="MainMenu/Panel/MarginContainer/VBoxContainer" unique_id=1743514627]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Host" type="Button" parent="MainMenu/Panel/MarginContainer/VBoxContainer/Buttons" unique_id=1941786549]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Host"
+
+[node name="Join" type="Button" parent="MainMenu/Panel/MarginContainer/VBoxContainer/Buttons" unique_id=65219316]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Join"
+
+[node name="Label" type="Label" parent="MainMenu/Panel" unique_id=443638058]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_top = -31.0
+offset_bottom = -8.0
+grow_horizontal = 2
+text = "RCL TEST GAME"
+horizontal_alignment = 1
 
 [node name="Lighting" type="Node" parent="." unique_id=1212841812]
 

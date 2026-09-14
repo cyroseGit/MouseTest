@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="mouse test"
+config/name="rcl test game"
 run/main_scene="uid://cnjmj0uvbi3t6"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bhr2y54o6re6c"
 
 [display]
 

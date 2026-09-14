@@ -1,6 +1,10 @@
 extends Control
 
+## custom signals/enums
+
 enum CustomMouseMode {FROZEN, CENTERED, FREE}
+
+## vars
 
 var mouseMode : CustomMouseMode = CustomMouseMode.FREE
 var osMouseVisible = true
@@ -8,6 +12,10 @@ var osMouseShouldBeConfined = false
 var fakeMousePos = Vector2.ZERO
 
 @onready var CursorImage = $Cursor
+
+## functions
+
+## connections
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("Drag Camera"):

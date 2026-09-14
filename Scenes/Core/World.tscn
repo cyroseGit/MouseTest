@@ -32,5 +32,11 @@ shadow_enabled = true
 [node name="Map" type="Node" parent="." unique_id=2045336935]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Map" unique_id=287839550]
-size = Vector3(100, 1, 100)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(256, 1, 256)
 material = ExtResource("2_r6g5u")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=616634740]
+transform = Transform3D(0.7343225, 0.10618776, -0.6704436, 0, 0.98768836, 0.15643436, 0.67880076, -0.11487327, 0.7252818, -4.0652227, 4.7336054, 5.296586)
+current = true

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://610vpjwy8kt1"]
+
+[ext_resource type="Script" uid="uid://comexni2jm42b" path="res://Scripts/MainSceneScripts/Menu.gd" id="1_s6c14"]
+[ext_resource type="PackedScene" uid="uid://b7ohh4qht3u1u" path="res://Assets/Models/RCL.blend" id="2_ekpe3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ekpe3"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_o04fg"]
+sky_material = SubResource("ProceduralSkyMaterial_ekpe3")
+
+[sub_resource type="Environment" id="Environment_psmk1"]
+background_mode = 2
+sky = SubResource("Sky_o04fg")
+glow_enabled = true
+
+[node name="Menu" type="Node3D" unique_id=623179126]
+script = ExtResource("1_s6c14")
+
+[node name="MainMenu" type="Control" parent="." unique_id=1067581469]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lighting" type="Node" parent="." unique_id=1212841812]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting" unique_id=1363754670]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting" unique_id=1375048862]
+environment = SubResource("Environment_psmk1")
+
+[node name="Map" type="Node" parent="." unique_id=269397125]
+
+[node name="RCL" parent="Map" unique_id=779677062 instance=ExtResource("2_ekpe3")]
+transform = Transform3D(0.5749942, 0, 0.8181575, 0, 1, 0, -0.8181575, 0, 0.5749942, 0, 0, 0)
+
+[node name="CameraPoint" type="Node3D" parent="Map" unique_id=409273913]
+
+[node name="Camera3D" type="Camera3D" parent="Map/CameraPoint" unique_id=1541316800]
+transform = Transform3D(-0.6461209, -0.34650168, 0.68004733, 0, 0.8910064, 0.45399076, -0.7632351, 0.2933329, -0.57569784, 4.708838, 3.1868758, -4.120861)

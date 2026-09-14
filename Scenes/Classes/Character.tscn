@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://1kq2fr2ckxl7"]
+
+[ext_resource type="PackedScene" uid="uid://be71p0qonruvx" path="res://Assets/Models/Character.blend" id="1_51p6q"]
+[ext_resource type="Script" uid="uid://1j0awoku42te" path="res://Scripts/Classes/CharacterHandler.gd" id="1_oi11d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f5d5m"]
+size = Vector3(2, 2, 1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_snads"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_oi11d"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0uln"]
+animation = &"Jumping"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_51hbq"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_snads"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_f5d5m"]
+graph_offset = Vector2(-219.54547, -6)
+nodes/output/position = Vector2(620, 120)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_snads")
+nodes/Idle/position = Vector2(-140, 60)
+nodes/Walk/node = SubResource("AnimationNodeAnimation_51hbq")
+nodes/Walk/position = Vector2(-140, 260)
+nodes/Jumpiong/node = SubResource("AnimationNodeAnimation_o0uln")
+nodes/Jumpiong/position = Vector2(140, 300)
+nodes/WalkProgress/node = SubResource("AnimationNodeBlend2_snads")
+nodes/WalkProgress/position = Vector2(140, 60)
+nodes/JumpProgress/node = SubResource("AnimationNodeBlend2_oi11d")
+nodes/JumpProgress/position = Vector2(420, 80)
+node_connections = [&"output", 0, &"JumpProgress", &"WalkProgress", 0, &"Idle", &"WalkProgress", 1, &"Walk", &"JumpProgress", 0, &"WalkProgress", &"JumpProgress", 1, &"Jumpiong"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=717896441]
+script = ExtResource("1_oi11d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1178613895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("BoxShape3D_f5d5m")
+
+[node name="CameraOrigin" type="Node3D" parent="." unique_id=753243359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraOrigin" unique_id=1671803470]
+current = true
+
+[node name="Character" parent="." unique_id=384393108 instance=ExtResource("1_51p6q")]
+
+[node name="Skeleton3D" parent="Character/Object" parent_id_path=PackedInt32Array(384393108, 1677378653) index="0" unique_id=779757769]
+bones/1/position = Vector3(0, 1.9986621, 0)
+bones/2/position = Vector3(-4.371138e-08, 1.4986626, 1)
+bones/2/rotation = Quaternion(0.99999976, 0.0006928442, -1.08857286e-07, -2.5223286e-05)
+bones/3/position = Vector3(4.3711395e-08, 1.4986626, -1)
+bones/3/rotation = Quaternion(0.99999976, 0.0006928442, 1.3577277e-07, 2.8905824e-05)
+bones/5/position = Vector3(-2.1855687e-08, 0.0017093999, 0.5)
+bones/6/position = Vector3(2.1855698e-08, 0.0017093999, -0.5)
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=384220854]
+root_node = NodePath("../Character")
+tree_root = SubResource("AnimationNodeBlendTree_f5d5m")
+anim_player = NodePath("../Character/AnimationPlayer")
+parameters/WalkProgress/blend_amount = 0.0
+parameters/JumpProgress/blend_amount = 0.0
+
+[editable path="Character"]

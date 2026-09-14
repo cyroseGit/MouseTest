@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="animation_library"
 importer_version=1
-type="PackedScene"
-uid="uid://be71p0qonruvx"
-path="res://.godot/imported/Character.blend-0b908b164020ae780258c3a83e315b62.scn"
+type="AnimationLibrary"
+uid="uid://bg85a1ypwkmi"
+path="res://.godot/imported/CharacterAnimations.blend-e262380ee731d9eb98ce007aaf2e2528.res"
 
 [deps]
 
-source_file="res://Assets/Models/Character.blend"
-dest_files=["res://.godot/imported/Character.blend-0b908b164020ae780258c3a83e315b62.scn"]
+source_file="res://Assets/Animations/CharacterAnimations.blend"
+dest_files=["res://.godot/imported/CharacterAnimations.blend-e262380ee731d9eb98ce007aaf2e2528.res"]
 
 [params]
 
